@@ -1,5 +1,8 @@
+import service.PizzaPriceCalculator;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        PizzaPriceCalculator pizzaPriceCalculator = new PizzaPriceCalculator(0.04);
+        System.out.println("Pizza costs: " + pizzaPriceCalculator.calculatePrice(30) + " zł");
     }
 }
