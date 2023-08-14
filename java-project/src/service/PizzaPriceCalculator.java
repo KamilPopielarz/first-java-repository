@@ -1,6 +1,8 @@
 package service;
 
-public class PizzaPriceCalculator {
+import service.interfaces.PriceCalculator;
+
+public class PizzaPriceCalculator implements PriceCalculator {
     private double priceForCm2;
     private double pricePerKilometer;
     private double tipPercentage;
@@ -26,7 +28,7 @@ public class PizzaPriceCalculator {
         return pizzaAndDelivery + calculateTip(pizzaAndDelivery);
     }
 
-    public double calculateTip(double pizzaAndDelivery) {
+    private double calculateTip(double pizzaAndDelivery) {
         return pizzaAndDelivery * tipPercentage;
     }
 
