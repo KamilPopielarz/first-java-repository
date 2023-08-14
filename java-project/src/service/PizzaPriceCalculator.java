@@ -13,8 +13,8 @@ public class PizzaPriceCalculator implements PriceCalculator {
         this.tipPercentage = tipPercentageFromConstructor;
     }
 
-    public double calculatePrice(int diameter) {
-        double radius = diameter / 2.0;
+    public double calculatePrice(int size) {
+        double radius = size / 2.0;
         double pizzaArea = 3.14 * (radius) * (radius);
         return pizzaArea * priceForCm2;
     }
@@ -23,8 +23,8 @@ public class PizzaPriceCalculator implements PriceCalculator {
         return distance * pricePerKilometer;
     }
 
-    public double calculateTotalPrice(int diameter, int distance) {
-        double pizzaAndDelivery = calculatePrice(diameter) + calculateDeliveryPrice(distance);
+    public double calculateTotalPrice(int size, int distance) {
+        double pizzaAndDelivery = calculatePrice(size) + calculateDeliveryPrice(distance);
         return pizzaAndDelivery + calculateTip(pizzaAndDelivery);
     }
 
