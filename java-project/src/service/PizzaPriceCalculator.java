@@ -2,15 +2,14 @@ package service;
 
 import service.interfaces.PriceCalculator;
 
-public class PizzaPriceCalculator implements PriceCalculator {
+public class PizzaPriceCalculator extends AbstractPriceCalculator  implements PriceCalculator {
     private double priceForCm2;
     private double pricePerKilometer;
-    private double tipPercentage;
 
     public PizzaPriceCalculator(double priceForCm2FromConstructor, double pricePerKilometerFromConstructor, double tipPercentageFromConstructor) {
+        super (tipPercentageFromConstructor);
         this.priceForCm2 = priceForCm2FromConstructor;
         this.pricePerKilometer = pricePerKilometerFromConstructor;
-        this.tipPercentage = tipPercentageFromConstructor;
     }
 
     public double calculatePrice(int size) {
@@ -27,9 +26,4 @@ public class PizzaPriceCalculator implements PriceCalculator {
         double pizzaAndDelivery = calculatePrice(size) + calculateDeliveryPrice(distance);
         return pizzaAndDelivery + calculateTip(pizzaAndDelivery);
     }
-
-    private double calculateTip(double pizzaAndDelivery) {
-        return pizzaAndDelivery * tipPercentage;
-    }
-
 }
