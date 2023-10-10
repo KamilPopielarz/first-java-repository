@@ -4,8 +4,8 @@ import service.interfaces.PriceCalculator;
 
 public class BurgerPriceCalculator extends AbstractPriceCalculator implements PriceCalculator  {
 
-    protected double priceForCmOfHeight;
-    protected double pricePerKilometer;
+    private double priceForCmOfHeight;
+    private double pricePerKilometer;
 
     public BurgerPriceCalculator(double priceForCmOfHeightFromConstructor, double pricePerKilometerFromConstructor, double tipPercentageFromConstructor){
         super(tipPercentageFromConstructor);
