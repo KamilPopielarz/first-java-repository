@@ -1,3 +1,6 @@
+import inheritance.children.Cat;
+import inheritance.children.Dog;
+import inheritance.parent.Animal;
 import service.BurgerPriceCalculator;
 import service.PizzaPriceCalculator;
 
@@ -8,9 +11,35 @@ public class Main {
 //        System.out.println("Delivery costs: " + pizzaPriceCalculator.calculateDeliveryPrice(10) + "zł");
 //        System.out.println("OverallPrice: " + pizzaPriceCalculator.calculateTotalPrice(30, 10) + "zł");
 
-        BurgerPriceCalculator burgerPriceCalculator = new BurgerPriceCalculator(3, 3, 0.05);
-        System.out.println("Burger costs: " + burgerPriceCalculator.calculatePrice(10) + "zł");
-        System.out.println("Delivery costs: " + burgerPriceCalculator.calculateDeliveryPrice(13) + "zł");
-        System.out.println("Overall costs: " + burgerPriceCalculator.calculateTotalPrice(10, 13) + "zł");
+//        BurgerPriceCalculator burgerPriceCalculator = new BurgerPriceCalculator(3, 3, 0.05);
+//        System.out.println("Burger costs: " + burgerPriceCalculator.calculatePrice(10) + "zł");
+//        System.out.println("Delivery costs: " + burgerPriceCalculator.calculateDeliveryPrice(13) + "zł");
+//        System.out.println("Overall costs: " + burgerPriceCalculator.calculateTotalPrice(10, 13) + "zł");
+
+        Animal animal = new Animal();
+        Animal dog = new Dog();
+        Animal cat = new Cat();
+
+        Dog dog2 = new Dog();
+        Cat cat2 = new Cat();
+
+        System.out.println("Animal animal: "+ animal.move());
+        System.out.println("Animal dog: "+ dog.move());
+        System.out.println("Animal cat: "+ cat.move());
+        System.out.println("Dog dog2: "+ dog2.move());
+        System.out.println("Cat cat2: "+ cat2.move());
+
+
+
+
+
+
+
+
     }
+
+
+
 }
+
+
