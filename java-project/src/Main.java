@@ -1,5 +1,7 @@
+import inheritance.children.Bird;
 import inheritance.children.Cat;
 import inheritance.children.Dog;
+import inheritance.children.Fish;
 import inheritance.parent.Animal;
 import service.BurgerPriceCalculator;
 import service.PizzaPriceCalculator;
@@ -19,6 +21,9 @@ public class Main {
         Animal animal = new Animal();
         Animal dog = new Dog();
         Animal cat = new Cat();
+        Animal fish = new Fish();
+        Animal bird = new Bird();
+
 
         Dog dog2 = new Dog();
         Cat cat2 = new Cat();
@@ -29,15 +34,13 @@ public class Main {
         System.out.println("Dog dog2: "+ dog2.move());
         System.out.println("Cat cat2: "+ cat2.move());
 
-
-
-
-
-
-
+        System.out.println("Can dog fly?:" + dog.canFly());
+        System.out.println("Can dog run?:" + dog.canRun());
+        System.out.println("Can fish swim?:" + fish.canSwim());
+        System.out.println("Can bird fly?:" + bird.canFly());
+        System.out.println(dog2.poke());
 
     }
-
 
 
 }

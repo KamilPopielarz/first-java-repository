@@ -2,13 +2,14 @@ package inheritance.children;
 
 import inheritance.parent.Animal;
 
-public class Cat extends Animal {
+public class Fish extends Animal {
 
-    public Cat(){
-        super(false, false,true);
+    public Fish(){
+        super(false, true,false);
     }
+
     @Override
     public String move() {
-        return "Cat moves";
+        return "Fish swim";
     }
 }
