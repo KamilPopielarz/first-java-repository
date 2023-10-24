@@ -27,18 +27,23 @@ public class Main {
 
         Dog dog2 = new Dog();
         Cat cat2 = new Cat();
+        Cat cat3 = new Cat();
 
-        System.out.println("Animal animal: "+ animal.move());
-        System.out.println("Animal dog: "+ dog.move());
-        System.out.println("Animal cat: "+ cat.move());
-        System.out.println("Dog dog2: "+ dog2.move());
-        System.out.println("Cat cat2: "+ cat2.move());
-
-        System.out.println("Can dog fly?:" + dog.canFly());
-        System.out.println("Can dog run?:" + dog.canRun());
-        System.out.println("Can fish swim?:" + fish.canSwim());
-        System.out.println("Can bird fly?:" + bird.canFly());
-        System.out.println(dog2.poke());
+//        System.out.println("Animal animal: "+ animal.move());
+//        System.out.println("Animal dog: "+ dog.move());
+//        System.out.println("Animal cat: "+ cat.move());
+//        System.out.println("Dog dog2: "+ dog2.move());
+//        System.out.println("Cat cat2: "+ cat2.move());
+//
+//        System.out.println("Can dog fly?:" + dog.canFly());
+//        System.out.println("Can dog run?:" + dog.canRun());
+//        System.out.println("Can fish swim?:" + fish.canSwim());
+//        System.out.println("Can bird fly?:" + bird.canFly());
+//        System.out.println(dog2.poke());
+        System.out.println(cat.toString());
+        System.out.println(dog.toString());
+        System.out.println(bird.toString());
+        System.out.println(cat2.equals(cat3));
 
     }
 

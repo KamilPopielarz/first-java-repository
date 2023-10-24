@@ -4,7 +4,7 @@ import inheritance.parent.Animal;
 
 public class Bird extends Animal {
 
-    public Bird(){
+    public Bird() {
         super(true, false, false);
     }
 
@@ -12,4 +12,11 @@ public class Bird extends Animal {
     public String move() {
         return "Bird flies";
     }
+
+    @Override
+    public String toString() {
+        return "bird can fly:" + canFly();
+    }
 }
+
+
