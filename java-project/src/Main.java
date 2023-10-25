@@ -22,12 +22,22 @@ public class Main {
         Animal dog = new Dog();
         Animal cat = new Cat();
         Animal fish = new Fish();
-        Animal bird = new Bird();
+        Animal bird = new Bird(3,"jack");
+        Bird bird2 = new Bird(3,"kcaj");
+
+        System.out.println(bird.equals(bird2));
+        System.out.println(bird.hashCode());
+        System.out.println(bird2.hashCode());
+        System.out.println((char)97);
+
 
 
         Dog dog2 = new Dog();
         Cat cat2 = new Cat();
         Cat cat3 = new Cat();
+
+//        System.out.println(dog.hashCode());
+//        System.out.println(dog2.hashCode());
 
 //        System.out.println("Animal animal: "+ animal.move());
 //        System.out.println("Animal dog: "+ dog.move());
@@ -40,10 +50,26 @@ public class Main {
 //        System.out.println("Can fish swim?:" + fish.canSwim());
 //        System.out.println("Can bird fly?:" + bird.canFly());
 //        System.out.println(dog2.poke());
-        System.out.println(cat.toString());
-        System.out.println(dog.toString());
-        System.out.println(bird.toString());
-        System.out.println(cat2.equals(cat3));
+//        System.out.println(cat.toString());
+//        System.out.println(dog.toString());
+//        System.out.println(bird.toString());
+//        System.out.println(cat2.equals(cat3));
+
+//        String s1 = "kamil";
+//        String s2 = "kamil";
+//        String s3 = new String("kamil");
+//        String s4 = new String("kamil");
+
+//        System.out.println(s1.equals(s2));
+//        System.out.println(s1.hashCode());
+//        System.out.println(s2.hashCode());
+//        System.out.println(s1.equals(s3));
+//        System.out.println(s3.hashCode());
+//        System.out.println(s4.hashCode());
+//        System.out.println(s3.equals(s4));
+//        System.out.println(s3==s4);
+
+
 
     }
 
