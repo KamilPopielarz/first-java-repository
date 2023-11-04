@@ -22,19 +22,26 @@ public class Main {
         Animal dog = new Dog();
         Animal cat = new Cat();
         Animal fish = new Fish();
-        Animal bird = new Bird(3,"jack");
-        Bird bird2 = new Bird(3,"kcaj");
+        Animal bird = new Bird(3, "jack");
+        Bird bird2 = new Bird(3, "kcaj");
 
         System.out.println(bird.equals(bird2));
         System.out.println(bird.hashCode());
         System.out.println(bird2.hashCode());
-        System.out.println((char)97);
-
-
+        System.out.println((char) 97);
 
         Dog dog2 = new Dog();
         Cat cat2 = new Cat();
         Cat cat3 = new Cat();
+
+//        Animal dogFromAnimal = ((Dog) animal);
+//        System.out.println(dogFromAnimal.poke());
+
+        Object animalFromDog2 = ((Object) dog2);
+        System.out.println(animalFromDog2.toString());
+
+//        String string = "hello";
+//        System.out.println(((Object)string).toCharArray());
 
 //        System.out.println(dog.hashCode());
 //        System.out.println(dog2.hashCode());
@@ -68,7 +75,6 @@ public class Main {
 //        System.out.println(s4.hashCode());
 //        System.out.println(s3.equals(s4));
 //        System.out.println(s3==s4);
-
 
 
     }
