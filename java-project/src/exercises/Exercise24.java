@@ -22,10 +22,11 @@ public class Exercise24 {
 
         StringBuilder s = new StringBuilder();
 
-        s.append("My name is Anna");
-        s.append("");                               // NIE DZIAŁA .append ???
-        s.append("I am a teacher");
+        s.append("My name is Anna")
+        .append("")                              // NIE DZIAŁA .append ???
+        .append("I am a teacher");
 
+        System.out.println(s);
 
         System.out.println("Here is some text.\tThat was a tab. \nThat was a newline");
         System.out.println("More text.");
