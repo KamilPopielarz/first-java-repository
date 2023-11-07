@@ -1,6 +1,9 @@
 package exercises;
 
+import exercises.exceptions.CustomIOException;
+
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -12,14 +15,26 @@ public class Exceptions {
 //        System.out.println(person.name.length());
 //        System.out.println(3 / 0);
         extracted();
+
     }
 
-    private static void extracted() throws IOException {
+    private static void extracted() {
         String expected_value = "Hello, world!";
         String file = "/fileTest.txt";
 
-        BufferedReader reader = new BufferedReader(new FileReader(file));
-        String currentLine = reader.readLine();
-        reader.close();
+        extracted2(file);
+
+//        String currentLine = reader.readLine();
+//        reader.close();
+    }
+
+    private static void extracted2(String file) {
+        while (true) {
+            try {
+                BufferedReader reader = new BufferedReader(new FileReader(file));
+            } catch (FileNotFoundException e) {
+                throw new CustomIOException(e.getMessage());
+            }
+        }
     }
 }
