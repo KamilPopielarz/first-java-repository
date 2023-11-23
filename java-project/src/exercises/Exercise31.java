@@ -7,6 +7,7 @@ class Plant {
 
     public String getData(){
 
+        return null;
     }
 
     public String getName() {
