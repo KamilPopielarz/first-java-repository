@@ -1,32 +1,72 @@
 package exercises;
 
 import java.io.*;
+import java.util.Scanner;
 
 
 public class Exercise42 {
 
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
-        String file = "fileTest.txt";
+//        readAndWrite();
+        Scanner input = new Scanner(System.in);
+        String line = input.nextLine();
+        String inputFileName = "input.txt";
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(inputFileName));
+            writer.write(line);
+            writer.close();
 
-        String str1 = "Hello";
-        String str2 = "World";
-        BufferedWriter writer = new BufferedWriter(new FileWriter(file));
-        writer.write(str1);
-        writer.append(' ');
-        writer.append("\n");
-        writer.append(str2);
+        } catch (IOException e) {
+            System.out.println("Unable to read file: " + inputFileName);
+        }
 
-        writer.close();
-
-        BufferedReader reader = new BufferedReader(new FileReader(file));
-        String currentLine1 = reader.readLine();
-        String currentLine2 = reader.readLine();
-        reader.close();
-
-        System.out.println(currentLine1 + currentLine2);
-
+        readAndDisplay(inputFileName);
 
     }
+
+    private static void readAndDisplay(String fileName) {
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(fileName));
+            String currentLine = reader.readLine();
+            reader.close();
+            System.out.println(currentLine);
+        } catch (IOException e) {
+            System.out.println("Unable to read file: " + fileName);
+        }
+
+    }
+
+    private static void readAndWrite() {
+        String file = "fileTest.txt";
+        String file2 = "fileTest2.txt";
+        String str1 = "Hello";
+        String str2 = "World";
+
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+            writer.write(str1);
+            writer.append(' ');
+            writer.append("\n");
+            writer.append(str2);
+
+            writer.close();
+
+            BufferedReader reader = new BufferedReader(new FileReader(file2));
+            String currentLine1 = reader.readLine();
+            String currentLine2 = reader.readLine();
+            reader.close();
+
+
+            System.out.println(currentLine1 + currentLine2);
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found: " + file);
+        } catch (IOException e) {
+            System.out.println("Unable to read file: " + file);
+        }
+    }
+
+
 }
+
