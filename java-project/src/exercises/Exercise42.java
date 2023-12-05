@@ -10,28 +10,36 @@ public class Exercise42 {
     public static void main(String[] args) {
 
 //        readAndWrite();
-        Scanner input = new Scanner(System.in);
-        String line = input.nextLine();
+        Scanner scanner = new Scanner(System.in);
+        int numberOfLines = scanner.nextInt();
+
         String inputFileName = "input.txt";
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(inputFileName));
-            writer.write(line);
+            scanner.nextLine();
+            for (int i = 0; i < numberOfLines; i++) {
+                String line = scanner.nextLine();
+                writer.write(line);
+                writer.append("\n");
+            }
             writer.close();
 
         } catch (IOException e) {
             System.out.println("Unable to read file: " + inputFileName);
         }
 
-        readAndDisplay(inputFileName);
+        readAndDisplay(inputFileName, numberOfLines);
 
     }
 
-    private static void readAndDisplay(String fileName) {
+    private static void readAndDisplay(String fileName, int numberOfLines) {
         try {
             BufferedReader reader = new BufferedReader(new FileReader(fileName));
-            String currentLine = reader.readLine();
+            for (int i = 0; i < numberOfLines; i++) {
+                String currentLine = reader.readLine();
+                System.out.println(currentLine);
+            }
             reader.close();
-            System.out.println(currentLine);
         } catch (IOException e) {
             System.out.println("Unable to read file: " + fileName);
         }
