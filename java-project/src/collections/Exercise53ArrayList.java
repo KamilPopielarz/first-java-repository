@@ -34,5 +34,26 @@ public class Exercise53ArrayList {
         System.out.println(names);
         System.out.println(names.size());
 
+        ArrayList<Integer> numbers = new ArrayList<Integer>();
+
+        numbers.add(10);
+        numbers.add(100);
+        numbers.add(40);
+
+        System.out.println(numbers.get(0));
+        System.out.println("Pierwsza metoda: ");
+        for(int i=0; i < numbers.size(); i++){
+            System.out.println(numbers.get(i));
+        }
+        System.out.println("Druga metoda: ");
+        for(Integer value: numbers){
+            System.out.println(value);
+        }
+
+        numbers.remove(numbers.size() -1);
+
+        numbers.remove(0);
+
+
     }
 }
