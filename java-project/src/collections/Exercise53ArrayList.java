@@ -1,6 +1,8 @@
 package collections;
 
+import java.lang.invoke.VarHandle;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Exercise53ArrayList {
@@ -21,9 +23,9 @@ public class Exercise53ArrayList {
 
         List<String> strings = List.of("Adam", "Maja", "Maciek", "Jacek");
         ArrayList<String> names = new ArrayList<>(strings);
-        if(names.contains("Kamil")){
+        if (names.contains("Kamil")) {
             System.out.println("Kamil is placed at index: " + names.indexOf("Kamil"));
-        }else{
+        } else {
             System.out.println("There is not such a name");
         }
         System.out.println(names);
@@ -42,15 +44,21 @@ public class Exercise53ArrayList {
 
         System.out.println(numbers.get(0));
         System.out.println("Pierwsza metoda: ");
-        for(int i=0; i < numbers.size(); i++){
+        for (int i = 0; i < numbers.size(); i++) {
             System.out.println(numbers.get(i));
         }
         System.out.println("Druga metoda: ");
-        for(Integer value: numbers){
+        for (Integer value : numbers) {
+            System.out.println(value);
+        }
+        Iterator<Integer> iterator = numbers.iterator();
+
+        while (iterator.hasNext()){
+            Integer value = iterator.next();
             System.out.println(value);
         }
 
-        numbers.remove(numbers.size() -1);
+        numbers.remove(numbers.size() - 1);
 
         numbers.remove(0);
 
