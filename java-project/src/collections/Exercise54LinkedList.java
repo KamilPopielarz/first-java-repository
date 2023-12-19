@@ -17,5 +17,32 @@ public class Exercise54LinkedList {
         boolean equals = linkedList.equals(arrayList);
         System.out.println(equals);
 
+        ArrayList<Integer> arrayList1 = new ArrayList<Integer>();
+        LinkedList<Integer> linkedList1 = new LinkedList<Integer>();
+
+        doTimings("ArrayList", arrayList1);
+        doTimings("LinkedList", linkedList1);
+
+    }
+    private static void doTimings(String type, List<Integer> list){
+        /*
+        for(int i=0; i<1E5; i++){
+            list.add(i);
+        }
+        */
+        for(int i=0; i<1E5; i++){
+            list.add(list.size(), i);
+        }
+
+
+        long start = System.currentTimeMillis();
+
+        for(int i=0; i<1E5; i++){
+            list.add(i);
+        }
+
+        long end = System.currentTimeMillis();
+
+        System.out.println("Time taken: "+ (end - start) + " ms for " + type);
     }
 }
