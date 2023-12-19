@@ -1,9 +1,11 @@
 package inheritance.parent;
 
-public  class Animal {
+public class Animal {
     private boolean canFly;
     private boolean canSwim;
     private boolean canRun;
+
+    private String name;
 
     public Animal() {
 
@@ -21,7 +23,7 @@ public  class Animal {
         return "Animal moves";
     }
 
-    public boolean canFly(){
+    public boolean canFly() {
         return this.canFly;
     }
 
@@ -34,11 +36,24 @@ public  class Animal {
     }
 
 
-    protected String giveSound(){
+    protected String giveSound() {
         return "Animal gives sound";
     }
 
-    protected void jump(){
+    protected void jump() {
         System.out.println("Animal jumps");
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return this.name;
     }
 }

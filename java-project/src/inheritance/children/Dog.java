@@ -17,4 +17,17 @@ public class Dog extends Animal {
         return super.giveSound();
     }
 
+    @Override
+    public int hashCode() {
+        if (getName() == null) {
+            return 0;
+        }
+        return this.getName().hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        Dog otherDog = (Dog)obj;
+        return this.getName().equals(otherDog.getName());
+    }
 }
