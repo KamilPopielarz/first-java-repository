@@ -39,20 +39,19 @@ public class Exercise55HashMap {
         System.out.println(map.keySet());
 
 
-    }
-
-    public static void hashmap(String[] args){
         HashMap<Integer, String> map2 = new HashMap<>();
-         map2.put(5,"Five");
-         map2.put(9,"Nine");
-         map2.put(7,"Seven");
-         map2.put(2,"Two");
-         map2.put(3,"Three");
+        map2.put(5,"Five");
+        map2.put(9,"Nine");
+        map2.put(7,"Seven");
+        map2.put(2,"Two");
+        map2.put(3,"Three");
 
-         String text = map2.get(9);
-
+      String text = map2.get(9);
         System.out.println(text);
+
     }
+
+
 
 }
 
