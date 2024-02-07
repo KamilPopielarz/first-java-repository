@@ -10,7 +10,7 @@ public class Dog extends Animal {
 
     @Override
     public String move() {
-        return "Dog moves";
+        return getName() + " moves";
     }
 
     public String poke() {
@@ -27,7 +27,7 @@ public class Dog extends Animal {
 
     @Override
     public boolean equals(Object obj) {
-        Dog otherDog = (Dog)obj;
+        Dog otherDog = (Dog) obj;
         return this.getName().equals(otherDog.getName());
     }
 }

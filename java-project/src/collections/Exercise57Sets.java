@@ -2,10 +2,7 @@ package collections;
 
 import inheritance.children.Dog;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Exercise57Sets {
     public static void main(String[] args) {
@@ -17,20 +14,34 @@ public class Exercise57Sets {
 
         Set<Dog> dogs = new HashSet<>();
         Dog dog1 = new Dog();
-        dog1.setName("Burek");
+        Dog dog2 = new Dog();
+        Dog dog3 = new Dog();
+        dog3.setName("Maks");
+        dog1.setName("Murek");
+        dog2.setName("Bops");
+
         dogs.add(dog1);
+        dogs.add(dog2);
+        dogs.add(dog3);
         System.out.println(dogs);
         System.out.println(dog1.hashCode());
+        Iterator<Dog> dogsInterator = dogs.iterator();
+        while (dogsInterator.hasNext()) {
+            System.out.println("Iterator: " + dogsInterator.next());
+        }
+        Dog m = dogs.stream().filter(dogInsideStream -> dogInsideStream.getName().charAt(0) == 77).findAny().get();
+        System.out.println(m);
+        List<String> strings = dogs.stream().map(dogInsideStream -> dogInsideStream.move()).toList();
+        System.out.println(strings);
+        Dog dog4 = new Dog();
+        System.out.println("HashCode przed nadaniem imienia: " + dog4.hashCode());
+        dog4.setName("Burek");
+        System.out.println("HashCode po nadaniu imienia: " + dog4.hashCode());
 
-        Dog dog2 = new Dog();
-        System.out.println("HashCode przed nadaniem imienia: " + dog2.hashCode());
-        dog2.setName("Burek");
-        System.out.println("HashCode po nadaniu imienia: " + dog2.hashCode());
-
-        dogs.add(dog2);
+        dogs.add(dog4);
         System.out.println(dogs);
 
-        System.out.println(dog1.equals(dog2));
+        System.out.println(dog1.equals(dog4));
 
         List<String> names = new ArrayList<>();
         names.add("Paweł");
