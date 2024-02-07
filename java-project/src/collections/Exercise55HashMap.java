@@ -11,6 +11,7 @@ public class Exercise55HashMap {
         map.put(22, "Maja");
         map.put(27, "Janek");
         map.put(null, "Tomek");
+
         String value = map.get(null);
         System.out.println(value);
 
@@ -36,5 +37,23 @@ public class Exercise55HashMap {
         System.out.println(map.get(23));
         System.out.println(map.values());
         System.out.println(map.keySet());
+
+
     }
+
+    public static void hashmap(String[] args){
+        HashMap<Integer, String> map2 = new HashMap<>();
+         map2.put(5,"Five");
+         map2.put(9,"Nine");
+         map2.put(7,"Seven");
+         map2.put(2,"Two");
+         map2.put(3,"Three");
+
+         String text = map2.get(9);
+
+        System.out.println(text);
+    }
+
 }
+
+
