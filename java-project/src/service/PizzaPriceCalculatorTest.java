@@ -21,4 +21,9 @@ class PizzaPriceCalculatorTest {
         Assertions.assertThrows(IllegalArgumentException.class, () -> pizzaPriceCalculator.calculatePrice(-32));
 
     }
+    @Test
+    public void testCalculateDeliveryPrice(){
+        PizzaPriceCalculator pizzaPriceCalculator = new PizzaPriceCalculator(0.06,3,10);
+        Assertions.assertThrows(IllegalArgumentException.class,()->pizzaPriceCalculator.calculateDeliveryPrice(-10));
+    }
 }

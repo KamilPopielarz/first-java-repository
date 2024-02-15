@@ -2,31 +2,36 @@ package service;
 
 import service.interfaces.PriceCalculator;
 
-public class PizzaPriceCalculator extends AbstractPriceCalculator  implements PriceCalculator {
+public class PizzaPriceCalculator extends AbstractPriceCalculator implements PriceCalculator {
     private double priceForCm2;
     private double pricePerKilometer;
 
     public PizzaPriceCalculator(double priceForCm2FromConstructor, double pricePerKilometerFromConstructor, double tipPercentageFromConstructor) {
-        super (tipPercentageFromConstructor);
+        super(tipPercentageFromConstructor);
         this.priceForCm2 = priceForCm2FromConstructor;
         this.pricePerKilometer = pricePerKilometerFromConstructor;
     }
 
     public double calculatePrice(int size) {
-        if (size <= 0) {
-            throw new IllegalArgumentException("Size can not be negative.");
-        }
+        checkInputValue(size);
         double radius = size / 2.0;
         double pizzaArea = 3.14 * (radius) * (radius);
         return pizzaArea * priceForCm2;
     }
 
     public double calculateDeliveryPrice(int distance) {
+       checkInputValue(distance);
         return distance * pricePerKilometer;
     }
 
     public double calculateTotalPrice(int size, int distance) {
         double pizzaAndDelivery = calculatePrice(size) + calculateDeliveryPrice(distance);
         return pizzaAndDelivery + calculateTip(pizzaAndDelivery);
+    }
+
+    private void checkInputValue(int value){
+        if (value <= 0) {
+            throw new IllegalArgumentException("Value cannot be negative");
+        }
     }
 }
