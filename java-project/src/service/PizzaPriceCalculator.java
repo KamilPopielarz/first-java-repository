@@ -13,6 +13,9 @@ public class PizzaPriceCalculator extends AbstractPriceCalculator  implements Pr
     }
 
     public double calculatePrice(int size) {
+        if (size <= 0) {
+            throw new IllegalArgumentException("Size can not be negative.");
+        }
         double radius = size / 2.0;
         double pizzaArea = 3.14 * (radius) * (radius);
         return pizzaArea * priceForCm2;
